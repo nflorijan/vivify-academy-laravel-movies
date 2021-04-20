@@ -4,13 +4,13 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="navbar-brand" href="/">
+      <a class="nav-item nav-link" href="/">
         Home
       </a>
-      <a class="navbar-brand" href="/movies">
+      <a class="nav-item nav-link" href="/movies">
         Movies
       </a>
-      <a class="navbar-brand" href="/movies/create">
+      <a class="nav-item nav-link" href="/movies/create">
         Add movie
       </a>
     </div>
