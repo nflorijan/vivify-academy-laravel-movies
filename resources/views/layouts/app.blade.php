@@ -16,7 +16,7 @@
         </style>
     </head>
     <body>
-      {{-- @include('navbar') --}}
+      @include('navbar')
       <div class="container">
         @yield('content')
       </div>
