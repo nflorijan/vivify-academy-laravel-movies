@@ -11,9 +11,31 @@
   <h4>Comments:</h4>
   <ul>
     @forelse ($movie->comments as $comment)
-      <li>{{ $comment->content}}</li>
+      <li>
+        {{ $comment->content}}
+        <br>
+        <span>Date: {{ $comment->published_at}}</span>
+      </li>
       @empty
       <span>No Comments</span>
     @endforelse
   </ul>
+  <form action="/movies/{{ $movie->id }}/comments" method="POST">
+    @csrf
+    <div class="form-group">
+      <label for="movie-content">Add Comment</label>
+      <input type="hidden" name="published_at" value="{{ date('Y-m-d') }}">
+      <textarea 
+        name="content" 
+        id="movie-content" 
+        class="form-control  
+        @error('content')is-invalid @enderror" 
+        rows="2" 
+        placeholder="Post content"></textarea>
+      @error('content')
+        <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 @endsection

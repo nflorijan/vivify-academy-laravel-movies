@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['content', 'published_at'];
+
+    public function movie() {
+        return $this->belongsTo(Movie::class);
+    }
 }
